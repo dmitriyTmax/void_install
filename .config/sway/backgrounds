@@ -1,0 +1,6 @@
+#!/bin/bash
+while : 
+do 
+  setrandom ~/Pictures/backgrounds/ 
+  sleep 1800
+done

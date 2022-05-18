@@ -1,6 +1,6 @@
 #!/bin/bash
 #Користувач має входити до наступних груп для керування: живленням, інтернетом, звуком, USB пристроями.
-xbps-install zip unzip wayland wlroots sway xorg-fonts nano neovim waybar dbus elogind polkit rtkit &&
+xbps-install zip unzip wayland wlroots sway xorg-fonts nano neovim Waybar dbus elogind polkit rtkit &&
 ln -s /etc/sv/dbus /var/service &&  
 ln -s /etc/sv/elogind /var/service  &&
 ln -s /etc/sv/polkitd /var/service  && 

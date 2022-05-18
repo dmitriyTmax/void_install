@@ -15,6 +15,7 @@ cp -R /root/void_install/.backgrounds ./ &&
 cp -R /root/void_install/.config      ./ &&
 git clone https://github.com/void-linux/void-packages &&
 chown -R void:wheel ./* &&
+echo XBPS_ALLOW_RESTRICTED=yes &&
 cd void-packages && 
 su void ./xbps-src binary-bootstrap &&
 su void ./xbps-src pkg google-chrome && 

@@ -1,0 +1,10 @@
+#!/bin/bash
+#Користувач має входити до наступних груп для керування: живленням, інтернетом, звуком, USB пристроями.
+sudo xbps-install zip unzip wayland wlroots sway xorg-fonts nvim waybar dbus elogind polkit rtkit
+ln -s /etc/sv/dbus /var/service
+ln -s /etc/sv/elogind /var/service
+ln -s /etc/sv/polkitd /var/service
+ln -s /etc/sv/rtkit /var/service
+useradd -m -g wheel -G audio,video,cdrom,optical,scaner,plugdev,users void 
+passwd void
+reboot

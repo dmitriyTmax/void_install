@@ -5,6 +5,6 @@ ln -s /etc/sv/dbus /var/service &&
 ln -s /etc/sv/elogind /var/service  &&
 ln -s /etc/sv/polkitd /var/service  && 
 ln -s /etc/sv/rtkit /var/service    &&
-useradd -m -g wheel -G audio,video,cdrom,optical,scaner,plugdev,users void && 
+useradd -m -g wheel -G audio,video,cdrom,optical,scanner,plugdev,users void && 
 passwd void &&
 reboot

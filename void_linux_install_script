@@ -16,7 +16,8 @@ cp -R /root/void_install/.config      ./ &&
 git clone https://github.com/void-linux/void-packages &&
 chown -R void:wheel ./* &&
 cd void-packages && 
-./xbps-src pkg google-chrome && 
+su void ./xbps-src binary-bootstrap &&
+su void ./xbps-src pkg google-chrome && 
 xbps-install --repository=/home/void/void-packages/hostdir/binpkgs/nonfree google-chrome &&
 rm -R /root/void_install && 
 reboot

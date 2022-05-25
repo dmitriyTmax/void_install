@@ -1,7 +1,7 @@
 #!/bin/bash
 #Користувач має входити до наступних груп для керування: живленням, інтернетом, звуком, USB пристроями.
 xbps-install zip unzip wayland wlroots sway xorg-fonts nano helix Waybar dbus elogind polkit rtkit \
-chrony alsa-utils pulseaudio telegram-desktop dmenu foot &&
+chrony alsa-utils pulseaudio telegram-desktop dmenu foot python3 &&
 ln -s /etc/sv/dbus    /var/service  &&  
 ln -s /etc/sv/elogind /var/service  &&
 ln -s /etc/sv/polkitd /var/service  && 

@@ -22,5 +22,11 @@ echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf &&
 su void ./xbps-src binary-bootstrap &&
 su void ./xbps-src pkg google-chrome && 
 xbps-install --repository=/home/void/void-packages/hostdir/binpkgs/nonfree google-chrome &&
+cd .. &&
+git clone https://github.com/FortAwesome/Font-Awesome &&
+cd Font-Awesome && 
+install  -Dm644 otfs/*.otf -t /usr/share/fonts/OTF &&
+cd .. &&
+rm -R Font-Awesome &&
 rm -R /root/void_install && 
 reboot

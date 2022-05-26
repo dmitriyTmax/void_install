@@ -14,7 +14,6 @@ cd /home/void/ &&
 cp -R /root/void_install/.backgrounds ./ &&
 cp -R /root/void_install/.config      ./ && 
 cp  /root/void_install/.bashrc        ./ &&
-git clone https://github.com/dracula/foot .config/foot &&
 git clone https://github.com/void-linux/void-packages &&
 chown -R void:wheel void-packages &&
 chown -R void:wheel .backgrounds &&

@@ -22,7 +22,7 @@ ln -s /etc/sv/rtkit   /var/service  &&
 ln -s /etc/sv/chrony  /var/service  &&
 ln -s /etc/sv/alsa    /var/service  &&
 ln -s /etc/sv/NetworkManager    /var/service  &&
-rm /var/service/dhcpd &&
+rm /var/service/dhcpcd &&
 cd /home/void/ &&
 cp -R /root/void_install/.backgrounds ./ &&
 cp -R /root/void_install/.config      ./ && 

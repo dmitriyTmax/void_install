@@ -13,7 +13,7 @@ touch /etc/sudoers.d/$user &&
 echo $user" ALL=(ALL) NOPASSWD: /usr/bin/halt, /usr/bin/poweroff, \
 /usr/bin/reboot, /usr/bin/shutdown, /usr/bin/zzz, /usr/bin/ZZZ" >> /etc/sudoers.d/$user
 
-xbps-install -Suv zip unzip wayland wlroots sway xorg-fonts nano helix Waybar dbus elogind polkit rtkit wl-clipboard \
+xbps-install -Suvy zip unzip wayland wlroots sway xorg-fonts nano helix Waybar dbus elogind polkit rtkit wl-clipboard \
 chrony alsa-utils pulseaudio telegram-desktop dmenu foot python3 base-devel NetworkManaget nm-applet pavucontrol &&
 ln -s /etc/sv/dbus    /var/service  &&  
 ln -s /etc/sv/elogind /var/service  &&
@@ -35,7 +35,7 @@ cd void-packages &&
 echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf &&
 su void ./xbps-src binary-bootstrap &&
 su void ./xbps-src pkg google-chrome && 
-xbps-install --repository=/home/void/void-packages/hostdir/binpkgs/nonfree google-chrome &&
+xbps-install -y --repository=/home/void/void-packages/hostdir/binpkgs/nonfree google-chrome &&
 cd .. &&
 git clone https://github.com/FortAwesome/Font-Awesome &&
 cd Font-Awesome && 

@@ -1,5 +1,14 @@
 #!/bin/bash
 #Користувач має входити до наступних груп для керування: живленням, інтернетом, звуком, USB пристроями.
+
+echo "Enter user name:" &&
+read user &&
+
+useradd -m -g wheel -G audio,video,cdrom,optical,scanner,plugdev,users $user && 
+
+echo "Enter password for your user:" &&
+passwd $user &&
+
 xbps-install -Suv zip unzip wayland wlroots sway xorg-fonts nano helix Waybar dbus elogind polkit rtkit \
 chrony alsa-utils pulseaudio telegram-desktop dmenu foot python3 base-devel&&
 ln -s /etc/sv/dbus    /var/service  &&  
@@ -8,8 +17,6 @@ ln -s /etc/sv/polkitd /var/service  &&
 ln -s /etc/sv/rtkit   /var/service  &&
 ln -s /etc/sv/chrony  /var/service  &&
 ln -s /etc/sv/alsa    /var/service  &&
-useradd -m -g wheel -G audio,video,cdrom,optical,scanner,plugdev,users void && 
-passwd void &&
 cd /home/void/ &&
 cp -R /root/void_install/.backgrounds ./ &&
 cp -R /root/void_install/.config      ./ && 

@@ -31,6 +31,7 @@ git clone https://github.com/void-linux/void-packages &&
 chown -R void:wheel void-packages &&
 chown -R void:wheel .backgrounds &&
 chown -R void:wheel .config &&
+chown void:wheel .bashrc &&
 cd void-packages && 
 echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf &&
 su void ./xbps-src binary-bootstrap &&

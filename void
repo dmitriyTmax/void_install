@@ -24,20 +24,22 @@ ln -s /etc/sv/chrony  /var/service  &&
 ln -s /etc/sv/alsa    /var/service  &&
 ln -s /etc/sv/NetworkManager    /var/service  &&
 rm /var/service/dhcpcd &&
-cd /home/void/ &&
+cd /home/$user/ &&
 cp -R /root/void_install/.backgrounds ./ &&
 cp -R /root/void_install/.config      ./ && 
 cp  /root/void_install/.bashrc        ./ &&
 git clone https://github.com/void-linux/void-packages &&
-chown -R void:wheel void-packages &&
-chown -R void:wheel .backgrounds &&
-chown -R void:wheel .config &&
-chown void:wheel .bashrc &&
+chown -R $user:wheel void-packages &&
+chown -R $user:wheel .backgrounds &&
+chown -R $user:wheel .config &&
+chown $user:wheel .bashrc &&
 cd void-packages && 
 echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf &&
-su void ./xbps-src binary-bootstrap &&
-su void ./xbps-src pkg google-chrome && 
-xbps-install -y --repository=/home/void/void-packages/hostdir/binpkgs/nonfree google-chrome &&
+su $user ./xbps-src binary-bootstrap &&
+su $user ./xbps-src pkg google-chrome && 
+su $user ./xbps-src pkg brightnessctl &&
+xbps-install -y --repository=/home/$user/void-packages/hostdir/binpkgs/nonfree google-chrome &&
+xbps-install -y --repository=/home/$user/void-packages/hostdir/binpkgs/ brightnessctl &&
 cd .. &&
 git clone https://github.com/FortAwesome/Font-Awesome &&
 cd Font-Awesome && 

@@ -27,6 +27,7 @@ rm /var/service/dhcpcd &&
 cd /home/$user/ &&
 cp -R /root/void_install/.backgrounds ./ &&
 cp -R /root/void_install/.config      ./ && 
+cp -R /root/void_install/.icons       ./ && 
 cp  /root/void_install/.bashrc        ./ &&
 git clone https://github.com/void-linux/void-packages &&
 chown -R $user:wheel void-packages &&

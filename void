@@ -17,7 +17,7 @@ xbps-install -Suvy zip unzip wayland wlroots sway xorg-fonts nano helix Waybar d
 chrony alsa-utils pulseaudio telegram-desktop dmenu foot python3 base-devel network-manager-applet pavucontrol \
 ranger lxappearance bpytop flatpak &&
 su $user flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
-su $user flatpak install flathub com.google.Chrome com.wps.Office &&
+su $user flatpak install flathub com.google.Chrome org.onlyoffice.desktopeditors &&
 ln -s /etc/sv/dbus    /var/service  &&  
 ln -s /etc/sv/elogind /var/service  &&
 ln -s /etc/sv/polkitd /var/service  && 

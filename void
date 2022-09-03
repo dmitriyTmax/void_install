@@ -2,12 +2,12 @@
 #Користувач має входити до наступних груп для керування: живленням, інтернетом, звуком, USB пристроями.
 
 echo "Enter user name:" &&
-read user &&
+read user;
 
-useradd -m -g wheel -G network,audio,video,cdrom,optical,scanner,plugdev,users $user && 
+useradd -m -g wheel -G network,audio,video,cdrom,optical,scanner,plugdev,users $user ;
 
-echo "Enter password for your user:" &&
-passwd $user &&
+echo "Enter password for your user:" ;
+passwd $user ;
 
 touch /etc/sudoers.d/$user &&
 echo $user" ALL=(ALL) NOPASSWD: /usr/bin/halt, /usr/bin/poweroff, \

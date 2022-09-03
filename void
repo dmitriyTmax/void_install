@@ -16,8 +16,6 @@ echo $user" ALL=(ALL) NOPASSWD: /usr/bin/halt, /usr/bin/poweroff, \
 xbps-install -Suvy zip unzip wayland wlroots sway xorg-fonts nano helix Waybar dbus elogind polkit rtkit wl-clipboard \
 chrony alsa-utils pulseaudio telegram-desktop dmenu foot python3 base-devel network-manager-applet pavucontrol \
 ranger lxappearance bpytop flatpak &&
-su $user flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo &&
-su $user flatpak install flathub com.google.Chrome org.onlyoffice.desktopeditors &&
 ln -s /etc/sv/dbus    /var/service  &&  
 ln -s /etc/sv/elogind /var/service  &&
 ln -s /etc/sv/polkitd /var/service  && 
@@ -31,20 +29,20 @@ cp -R /root/void_install/.backgrounds ./ &&
 cp -R /root/void_install/.config      ./ && 
 cp -R /root/void_install/.icons       ./ && 
 cp  /root/void_install/.bashrc        ./ &&
-#git clone https://github.com/void-linux/void-packages &&
-#chown -R $user:wheel void-packages &&
+git clone https://github.com/void-linux/void-packages &&
+chown -R $user:wheel void-packages &&
 chown -R $user:wheel .backgrounds &&
 chown -R $user:wheel .config &&
 chown -R $user:wheel .icons &&
 chown $user:wheel .bashrc &&
-#cd void-packages && 
-#echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf &&
-#su $user ./xbps-src binary-bootstrap &&
-#su $user ./xbps-src pkg google-chrome && 
-#su $user ./xbps-src pkg brightnessctl &&
-#xbps-install -y --repository=/home/$user/void-packages/hostdir/binpkgs/nonfree google-chrome &&
-#xbps-install -y --repository=/home/$user/void-packages/hostdir/binpkgs/ brightnessctl &&
-#cd .. &&
+cd void-packages && 
+echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf &&
+su $user ./xbps-src binary-bootstrap &&
+su $user ./xbps-src pkg google-chrome && 
+su $user ./xbps-src pkg brightnessctl &&
+xbps-install -y --repository=/home/$user/void-packages/hostdir/binpkgs/nonfree google-chrome &&
+xbps-install -y --repository=/home/$user/void-packages/hostdir/binpkgs/ brightnessctl &&
+cd .. &&
 git clone https://github.com/FortAwesome/Font-Awesome &&
 cd Font-Awesome && 
 install  -Dm644 otfs/*.otf -t /usr/share/fonts/OTF &&

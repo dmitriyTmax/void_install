@@ -17,7 +17,7 @@ echo FONT="UniCyr_8x16" >> /etc/rc.conf
 
 xbps-install -Suvy zip unzip wayland wlroots sway xorg-fonts nano helix Waybar dbus elogind polkit rtkit wl-clipboard \
 chrony alsa-utils pulseaudio telegram-desktop dmenu foot python3 base-devel network-manager-applet pavucontrol \
-ranger lxappearance bpytop flatpak wget curl &&
+ranger lxappearance bpytop flatpak wget curl pangox-compat&&
 ln -s /etc/sv/dbus    /var/service  &&  
 ln -s /etc/sv/elogind /var/service  &&
 ln -s /etc/sv/polkitd /var/service  && 
@@ -36,6 +36,7 @@ git clone https://github.com/toluschr/xdeb.git &&
 cd xdeb &&
 chmod 0744 xdeb &&
 wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb &&
+wget https://anydesk.com/en/downloads/thank-you?dv=deb_64 &&
 ./xdeb -Sde *.deb &&
 x=$(ls binpkgs | grep xbps); y=${x%.*.*}; xbps-install -y -R binpkgs $y &&
 cd /home/$user/ &&

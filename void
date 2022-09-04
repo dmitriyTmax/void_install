@@ -36,7 +36,6 @@ git clone https://github.com/toluschr/xdeb.git &&
 cd xdeb &&
 chmod 0744 xdeb &&
 wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb &&
-wget https://download.nomachine.com/download/7.10/Linux/nomachine_7.10.1_1_amd64.deb
 ./xdeb -Sde *.deb &&
 x=$(ls binpkgs | grep xbps); y=${x%.*.*}; xbps-install -y -R binpkgs $y &&
 cd /home/$user/ &&

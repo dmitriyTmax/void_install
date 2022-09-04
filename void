@@ -15,7 +15,7 @@ echo $user" ALL=(ALL) NOPASSWD: /usr/bin/halt, /usr/bin/poweroff, \
 
 xbps-install -Suvy zip unzip wayland wlroots sway xorg-fonts nano helix Waybar dbus elogind polkit rtkit wl-clipboard \
 chrony alsa-utils pulseaudio telegram-desktop dmenu foot python3 base-devel network-manager-applet pavucontrol \
-ranger lxappearance bpytop flatpak &&
+ranger lxappearance bpytop flatpak wget&&
 ln -s /etc/sv/dbus    /var/service  &&  
 ln -s /etc/sv/elogind /var/service  &&
 ln -s /etc/sv/polkitd /var/service  && 
@@ -30,6 +30,13 @@ cp -R /root/void_install/.config      ./ &&
 cp -R /root/void_install/.icons       ./ && 
 cp  /root/void_install/.bashrc        ./ &&
 git clone https://github.com/void-linux/void-packages &&
+git clone https://github.com/toluschr/xdeb.git && 
+cd xdeb &&
+su $user chmod 0744 xdeb &&
+wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb &&
+su $user ./xdeb -Sde *.deb &&
+xbps-install -y -R binpkgs onlyoffice-desktopeditors* &&
+cd /home/$user/ &&
 chown -R $user:wheel void-packages &&
 chown -R $user:wheel .backgrounds &&
 chown -R $user:wheel .config &&

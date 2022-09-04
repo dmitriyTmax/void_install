@@ -33,7 +33,7 @@ cp -R /root/void_install/.icons       ./ &&
 cp  /root/void_install/.bashrc        ./ &&
 git clone https://github.com/void-linux/void-packages &&
 git clone https://github.com/toluschr/xdeb.git && 
-chown -R $user:wheel void-packages &&
+chown -R $user:wheel xdeb &&
 cd xdeb &&
 su $user chmod 0744 xdeb &&
 wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb &&

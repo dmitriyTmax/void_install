@@ -4,7 +4,7 @@
 echo "Enter user name:" &&
 read user;
 
-useradd -m -g wheel -G network,audio,video,cdrom,optical,scanner,users $user ;
+useradd -m -g wheel -G network,audio,video,cdrom,optical,scanner,users,anon $user ;
 
 echo "Enter password for your user:" ;
 passwd $user ;

@@ -37,6 +37,7 @@ cd xdeb &&
 chmod 0744 xdeb &&
 wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb &&
 wget https://download.anydesk.com/linux/deb/anydesk_5.5.6-1_amd64.deb &&
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
 ./xdeb -Sde *.deb &&
 x=$(ls binpkgs | grep xbps); y=${x%.*.*}; xbps-install -y -R binpkgs $y &&
 cd /home/$user/ &&

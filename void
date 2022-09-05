@@ -36,7 +36,7 @@ git clone https://github.com/toluschr/xdeb.git &&
 cd xdeb &&
 chmod 0744 xdeb &&
 wget https://download.onlyoffice.com/install/desktop/editors/linux/onlyoffice-desktopeditors_amd64.deb &&
-wget https://anydesk.com/en/downloads/thank-you?dv=deb_64 &&
+wget https://download.anydesk.com/linux/deb/anydesk_5.5.6-1_amd64.deb &&
 ./xdeb -Sde *.deb &&
 x=$(ls binpkgs | grep xbps); y=${x%.*.*}; xbps-install -y -R binpkgs $y &&
 cd /home/$user/ &&

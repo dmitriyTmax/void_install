@@ -40,6 +40,7 @@ wget https://download.anydesk.com/linux/deb/anydesk_5.5.6-1_amd64.deb &&
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
 for deb_pkg in *.deb; do ./xdeb -Sde $deb_pkg; done &&
 for xbps_pkg in $(ls binpkgs | grep xbps); do pkg=${xbps_pkg%.*.*}; xbps-install -y -R binpkgs $pkg; done &&
+for dir in $(ls -d */); do rm -R $dir; done &&
 rm *.deb &&
 cd /home/$user/ &&
 chown -R $user:wheel xdeb &&

@@ -1,2 +1,0 @@
-#!/bin/bash
-udisksctl unmount -b $(lsblk -o PAth,SIZE | dmenu -l 10| cut -d ' ' -f 1)

@@ -1,7 +1,7 @@
 #!/bin/bash
 #Користувач має входити до наступних груп для керування: живленням, інтернетом, звуком, USB пристроями.
 
-PATH=$(pwd)
+P=$(pwd)
 
 echo "Enter user name:" &&
 read user;
@@ -32,10 +32,10 @@ ln -s /etc/sv/alsa    /var/service  &&
 ln -s /etc/sv/NetworkManager    /var/service  &&
 rm /var/service/dhcpcd &&
 cd /home/$user/ &&
-cp -R $PATH/.backgrounds ./ &&
-cp -R $PATH/.config      ./ && 
-cp -R $PATH/.icons       ./ && 
-cp    $PATH/.bashrc      ./ &&
+cp -R $P/.backgrounds ./ &&
+cp -R $P/.config      ./ && 
+cp -R $P/.icons       ./ && 
+cp    $P/.bashrc      ./ &&
 chmod +x .config/sway/bin* &&
 #git clone https://github.com/void-linux/void-packages &&
 git clone https://github.com/toluschr/xdeb.git && 
@@ -70,5 +70,5 @@ cd Font-Awesome &&
 install  -Dm644 otfs/*.otf -t /usr/share/fonts/OTF &&
 cd .. &&
 rm -R Font-Awesome &&
-rm -R $PATH && 
+rm -R $P && 
 reboot

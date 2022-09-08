@@ -36,6 +36,7 @@ cp -R $PATH/.backgrounds ./ &&
 cp -R $PATH/.config      ./ && 
 cp -R $PATH/.icons       ./ && 
 cp    $PATH/.bashrc      ./ &&
+chmod +x .config/sway/bin* &&
 #git clone https://github.com/void-linux/void-packages &&
 git clone https://github.com/toluschr/xdeb.git && 
 cd xdeb &&

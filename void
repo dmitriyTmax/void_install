@@ -32,10 +32,10 @@ ln -s /etc/sv/alsa    /var/service  &&
 ln -s /etc/sv/NetworkManager    /var/service  &&
 rm /var/service/dhcpcd &&
 cd /home/$user/ &&
-cp -R /root/void_install/.backgrounds ./ &&
-cp -R /root/void_install/.config      ./ && 
-cp -R /root/void_install/.icons       ./ && 
-cp  /root/void_install/.bashrc        ./ &&
+cp -R $PATH/.backgrounds ./ &&
+cp -R $PATH/.config      ./ && 
+cp -R $PATH/.icons       ./ && 
+cp    $PATH/.bashrc      ./ &&
 #git clone https://github.com/void-linux/void-packages &&
 git clone https://github.com/toluschr/xdeb.git && 
 cd xdeb &&

@@ -38,7 +38,7 @@ cp -R $P/.backgrounds ./ &&
 cp -R $P/.config      ./ && 
 cp -R $P/.icons       ./ && 
 cp    $P/.bashrc      ./ &&
-mv $P/Dracula_theme/rofi/Dracula-Dark.rasi /usr/share/rofi/themes/ 
+mv $P/Dracula_themes/rofi/Dracula-Dark.rasi /usr/share/rofi/themes/ &&
 chmod +x .config/sway/bin/* &&
 #git clone https://github.com/void-linux/void-packages &&
 git clone https://github.com/toluschr/xdeb.git && 

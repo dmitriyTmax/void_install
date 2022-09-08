@@ -1,0 +1,3 @@
+#!/bin/bash
+#udisksctl unmount -b $(lsblk -o PAth,SIZE | dmenu -l 10| cut -d ' ' -f 1)
+udisksctl unmount -b $(lsblk -o PAth,SIZE | rofi -dmenu -i -selected-row 1 -p "Unmount drive")

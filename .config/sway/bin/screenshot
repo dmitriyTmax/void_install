@@ -1,0 +1,2 @@
+#!/bin/bash
+while grim -g "0,106 1920x940" ~/Pictures/$(date +'%s_grim.png'); do sleep 15; done

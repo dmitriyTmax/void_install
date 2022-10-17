@@ -3,7 +3,7 @@
 
 P=$(pwd)
 
-echo "Enter user name:" &&
+echo -n "Enter user name:" &&
 read user;
 
 useradd -m -g wheel -G network,audio,video,cdrom,optical,scanner,users $user ;
@@ -11,12 +11,7 @@ useradd -m -g wheel -G network,audio,video,cdrom,optical,scanner,users $user ;
 echo "Enter password for your user:" ;
 passwd $user ;
 
-touch /etc/sudoers.d/$user &&
-echo $user" ALL=(ALL) NOPASSWD: /usr/bin/halt, /usr/bin/poweroff, \
-/usr/bin/reboot, /usr/bin/shutdown, /usr/bin/zzz, /usr/bin/ZZZ" >> /etc/sudoers.d/$user
-
 echo FONT="UniCyr_8x16" >> /etc/rc.conf
-
 
 xbps-install -Suy &&
 xbps-install -Suvy zip unzip wayland wlroots sway xorg-fonts nano helix Waybar dbus elogind polkit rtkit wl-clipboard \

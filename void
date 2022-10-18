@@ -65,10 +65,10 @@ chown $user:wheel .bashrc &&
 #cd .. &&
 git clone https://github.com/m4thewz/dracula-icons.git /usr/share/icons/dracula-icons &&
 git clone https://github.com/dracula/gtk.git /usr/share/themes/Dracula &&
-git clone https://github.com/FortAwesome/Font-Awesome &&
-cd Font-Awesome && 
-install  -Dm644 otfs/*.otf -t /usr/share/fonts/OTF &&
-cd .. &&
-rm -R Font-Awesome &&
+#git clone https://github.com/FortAwesome/Font-Awesome &&
+#cd Font-Awesome && 
+#install  -Dm644 otfs/*.otf -t /usr/share/fonts/OTF &&
+#cd .. &&
+#rm -R Font-Awesome &&
 rm -R $P && 
 reboot

@@ -30,12 +30,12 @@ gaps inner  3
 
 # Your preferred terminal emulator
 #set $term urxvt +sb -depth 32  -bg rgba:3000/2300/5100/9900  -fg white  -fn "xft:monospace:size=9"
-set $term foot
+set $term kitty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #set $menu dmenu_path | dmenu -fn '#F8F8F2' -nb '#282A36' -sb '#6272A4' -sf '#F8F8F2' -fn 'monospace-14' -p 'dmenu:' | xargs swaymsg exec -- | output eDP-1
-set $menu dmenu_path | rofi -show drun -show-icons
+set $menu dmenu_path | ~/.config/rofi/scripts/launcher_t1
 
 ### Output configuration
 #
@@ -110,7 +110,9 @@ bindsym $mod+f11 exec swaylock -f -c 000000
     bindsym $mod+Shift+c reload
 
     # exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'killall keyboard && killall backgrounds && swaymsg exit'
+    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'killall keyboard && killall backgrounds && swaymsg exit'
+    bindsym $mod+Shift+e exec ~/.config/rofi/applets/bin/powermenu.sh
+
 
     #mount drive
     bindsym Ctrl+Mod1+d  exec ~/.config/sway/bin/mount_drive
@@ -129,10 +131,10 @@ bindsym $mod+f11 exec swaylock -f -c 000000
     bindsym $mod+Ctrl+v exec viber -platform xcb 	
 
     #poweroff
-    bindsym $mod+Shift+p exec poweroff
+    bindsym $mod+Shift+p exec ~/.config/rofi/applets/bin/powermenu.sh
 
-    #protonvpn	
-    bindsym $mod+p exec grim -g "$(slurp)" - | swappy -f -		
+    #screenshot	
+    bindsym $mod+p exec ~/.config/rofi/applets/bin/screenshot.sh		
 	
 #
 # Moving around:
@@ -297,3 +299,4 @@ bindsym XF86AudioPrev exec playerctl previous
 
 for_window [app_id="pavucontrol"] floating enable, resize set 600 600
 for_window [app_id="nm-connection-editor"] floating enable, resize set 600 600
+for_window [app_id="eog"] floating enable

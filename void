@@ -14,7 +14,7 @@ passwd $user ;
 echo FONT="UniCyr_8x16" >> /etc/rc.conf
 
 xbps-install -Suy &&
-xbps-install -Suvy zip unzip wayland wlroots sway xorg-fonts nano helix Waybar dbus elogind polkit rtkit wl-clipboard \
+xbps-install -Suvy zip unzip wayland wlroots sway xorg-fonts font-iosevka nano helix Waybar dbus elogind polkit rtkit wl-clipboard \
 chrony alsa-utils pulseaudio telegram-desktop rofi foot python3 base-devel network-manager-applet pavucontrol \
 ranger lxappearance bpytop wget curl pangox-compat brightnessctl xdg-user-dirs gnome-tweaks nemo swaylock &&
 

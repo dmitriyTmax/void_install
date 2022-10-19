@@ -1,2 +1,3 @@
 #!/bin/bash
-./floating.sh $(cat ../config | grep 'set $term' | cut -d" " -f3-) -e bpytop
+term=$(cat ../config | grep 'set $term' | cut -d" " -f3-)
+exec ~/.config/sway/bin/floating.sh $term -e bpytop

@@ -1,3 +1,4 @@
 #!/bin/bash
-term=$(cat ../config | grep 'set $term' | cut -d" " -f3-)
-exec ~/.config/sway/bin/floating.sh $term -e bpytop
+route=~/.config/sway
+term=$(cat $route/config | grep 'set $term' | cut -d" " -f3-)
+exec $route/bin/floating.sh $term -e bpytop

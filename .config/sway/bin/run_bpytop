@@ -1,1 +1,2 @@
-
+#!/bin/bash
+./floating.sh $(cat ../config | grep 'set $term' | cut -d" " -f3-) -e bpytop

@@ -71,11 +71,11 @@
     "cpu": {
         "format": "{usage}% ",
         "tooltip": false,
-        "on-click-right" : "~/.config/sway/bin/floating.sh alacritty -e bpytop"
+        "on-click-right" : "~/.config/sway/bin/run_bpytop"
     },
     "memory": {
         "format": "{}% ",
-        "on-click-right" : "~/.config/sway/bin/floating.sh alacritty -e bpytop"
+        "on-click-right" : "~/.config/sway/bin/run_bpytop"
     },
     "temperature": {
         // "thermal-zone": 2,
